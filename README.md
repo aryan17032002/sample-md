@@ -322,15 +322,6 @@ CACHE_MAX_DOCS=10
 
 ---
 
-## Documentation
-
-For detailed information, refer to the following resources:
-
-- **[User Guide](./docs/USER_GUIDE.md)**: Comprehensive guide on using the application
-- **[API Documentation](http://localhost:8000/docs)**: Interactive Swagger API documentation (when running)
-- **[Troubleshooting Guide](./TROUBLESHOOTING.md)**: Solutions for common issues
-- **[Architecture Overview](./docs/ARCHITECTURE.md)**: Deep dive into system design
-- **[Deployment Guide](./docs/DEPLOYMENT.md)**: Advanced deployment options
 
 ---
 
@@ -405,43 +396,12 @@ docker compose restart backend
 docker compose logs -f backend
 ```
 
-### Still Need Help?
-
-1. Check [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for detailed solutions
-2. Review [API Documentation](http://localhost:8000/docs) for endpoint details
-3. Submit an issue on GitHub with logs and steps to reproduce
 
 ---
 
-## Contributing
 
-We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
 
-- Development setup and environment configuration
-- Coding standards and best practices
-- Testing guidelines and examples
-- Pull request process and code review guidelines
 
-### Development Quick Start
-
-```bash
-# Install backend dependencies
-cd backend
-pip install -r requirements.txt
-
-# Install frontend dependencies
-cd ../frontend
-npm install
-
-# Run in development mode
-# Terminal 1: Backend
-cd backend
-python server.py
-
-# Terminal 2: Frontend
-cd frontend
-npm run dev
-```
 
 ### Project Structure
 
@@ -471,36 +431,10 @@ FinSights/
 
 ---
 
-## Community
-
-- **GitHub Issues**: [Report bugs or request features](https://github.com/your-org/finsights/issues)
-- **Discussions**: [Ask questions and share ideas](https://github.com/your-org/finsights/discussions)
-- **Documentation**: [Comprehensive guides and API references](./docs/README.md)
 
 ---
 
-## References
 
-### Related Technologies
-
-- [OpenAI API](https://platform.openai.com/docs/api-reference) - GPT API documentation
-- [FastAPI](https://fastapi.tiangolo.com/) - Modern Python web framework
-- [React](https://react.dev/) - JavaScript UI library
-- [Docker](https://docs.docker.com/) - Containerization platform
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-
-### Similar Projects
-
-- [NVIDIA AI Blueprints](https://github.com/NVIDIA-AI-Blueprints) - Collection of AI application templates
-- [Langchain](https://www.langchain.com/) - LLM application framework
-- [Llamaindex](https://www.llamaindex.ai/) - Data framework for LLM apps
-
-### Financial AI Resources
-
-- [OpenAI Fine-Tuning](https://platform.openai.com/docs/guides/fine-tuning) - Custom model training
-- [Financial NLP Models](https://huggingface.co/models?search=financial) - Domain-specific models
-
----
 
 ## License
 
@@ -532,6 +466,6 @@ Have suggestions or encountered an issue?
 
 ---
 
-**Made with ❤️ for financial professionals and AI enthusiasts**
+
 
 [Back to Top](#-finsights---financial-document-summarization-ai-blueprint)
