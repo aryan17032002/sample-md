@@ -6,9 +6,9 @@ AI-powered financial document analysis with intelligent section-based summarizat
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-  - [Key Features](#key-features)
-  - [Architecture](#architecture)
+- [Project Overview](#project-overview)
+- [Architecture](#architecture)
+- [Features](#features)
 - [Get Started](#get-started)
   - [Prerequisites](#prerequisites)
   - [Quick Start](#quick-start)
@@ -18,30 +18,6 @@ AI-powered financial document analysis with intelligent section-based summarizat
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
-
----
-
-## Overview
-
-**FinSights** is an intelligent financial document analysis platform that leverages AI to automatically process and summarize financial documents. It extracts and organizes financial insights into six specialized sections, helping investors, analysts, and financial professionals quickly understand key information from lengthy financial reports, earnings statements, and other documents.
-
-### Key Features
-
-- 🤖 **AI-Powered Analysis**: Uses OpenAI's GPT-4o-mini for intelligent summarization
-- 📄 **Multi-Format Support**: Processes text, PDF, and DOCX files with OCR for image-based PDFs
-- 📊 **Structured Financial Sections**: Automatically organizes summaries into:
-  - Financial Performance (narrative + numbers)
-  - Key Metrics (KPIs)
-  - Risks & Challenges
-  - Opportunities
-  - Outlook / Guidance
-  - Other Important Highlights
-- ⚡ **Smart Caching**: Document caching system (1-hour TTL) for instant section switching
-- 💾 **Large Document Support**: Handles PDFs up to 100 pages, 50MB file size
-- 🎯 **Context-Aware Analysis**: Section detection based on content semantics, not just keywords
-- 📱 **Responsive UI**: Modern, mobile-friendly React + Tailwind CSS interface
-- 📥 **PDF Export**: Download summaries as formatted PDF documents
-- 🔒 **Production-Ready**: CORS support, comprehensive error handling, health checks
 
 ---
 
@@ -56,36 +32,6 @@ AI-powered financial document analysis with intelligent section-based summarizat
 - **Other Important Highlights** - Notable items, dividends, balance sheet items, and auditor notes
 
 Users can paste text directly or upload documents, and the system intelligently extracts and summarizes content using OpenAI's GPT-4o-mini model. The backend caches extracted documents, allowing users to explore different sections without re-uploading.
-
----
-
-## Features
-
-**Backend**
-
-- Multiple input format support (text, PDF, DOCX)
-- PDF text extraction with OCR support for image-based PDFs using pytesseract
-- DOCX document processing with python-docx
-- AI-powered summarization using OpenAI's GPT-4o-mini model
-- Intelligent section-based summarization with context-aware analysis
-- Smart document caching system (1-hour TTL, up to 25 documents) to avoid reprocessing
-- File validation and size limits (PDF/DOCX: 50 MB)
-- Page limit protection (max 100 pages per PDF) to prevent timeouts
-- Streaming response support for optimal performance
-- CORS enabled for web integration
-- Comprehensive error handling and logging
-- Health check endpoints
-- Modular architecture (routes + services + LLM service + PDF service)
-
-**Frontend**
-
-- Clean, intuitive interface with tab-based input selection (Text / File)
-- Drag-and-drop file upload capability
-- Real-time summary display with clickable financial section chips
-- Chat-like history view of all summaries
-- PDF export functionality for generated summaries
-- Mobile-responsive design with Tailwind CSS
-- Built with Vite for fast development and hot module replacement
 
 ---
 
@@ -146,54 +92,35 @@ graph LR
 
 ```
 
-### Service Components
+---
 
-1. **React Web UI (Port 5173)** - Modern frontend interface
-   - Tab-based input (Text / File)
-   - Clickable section chips for financial insights
-   - PDF export functionality
-   - Chat-like history view
-   - Real-time streaming responses
+## Features
 
-2. **FastAPI Backend (Port 8000)** - Orchestration and processing
-   - Handles file uploads and validation
-   - Routes requests to appropriate services
-   - Manages document caching
-   - Provides REST API with Swagger documentation
-   - Health check and monitoring endpoints
+**Backend**
 
-3. **LLM Service** - AI-powered summarization
-   - Calls OpenAI's GPT-4o-mini API
-   - Intelligent section extraction
-   - Context-aware analysis
-   - Temperature-controlled output (default 0.2 for consistency)
+- Multiple input format support (text, PDF, DOCX)
+- PDF text extraction with OCR support for image-based PDFs using pytesseract
+- DOCX document processing with python-docx
+- AI-powered summarization using OpenAI's GPT-4o-mini model
+- Intelligent section-based summarization with context-aware analysis
+- Smart document caching system (1-hour TTL, up to 25 documents) to avoid reprocessing
+- File validation and size limits (PDF/DOCX: 50 MB)
+- Page limit protection (max 100 pages per PDF) to prevent timeouts
+- Streaming response support for optimal performance
+- CORS enabled for web integration
+- Comprehensive error handling and logging
+- Health check endpoints
+- Modular architecture (routes + services + LLM service + PDF service)
 
-4. **PDF Service** - Document processing
-   - PDF text extraction using pypdf
-   - DOCX processing with python-docx
-   - OCR support for image-based PDFs using pytesseract
-   - Page limit protection (max 100 pages)
-   - Safe text cleaning
+**Frontend**
 
-5. **In-Memory Cache** - Document caching
-   - Stores extracted document text
-   - 1-hour TTL (configurable)
-   - Up to 25 documents (configurable)
-   - Instant section switching without re-extraction
-
-### Typical Flow
-
-1. User inputs text or uploads a document (PDF/DOCX) through the web UI
-2. Backend validates file and size
-3. For PDF/DOCX: PDF Service extracts text with OCR support
-4. For text: Used directly
-5. Extracted text sent to LLM Service
-6. LLM Service calls OpenAI's GPT-4o-mini API
-7. Model generates comprehensive summary with 6 financial sections
-8. Backend caches extracted content (using doc_id)
-9. Summary returned to frontend with structured section data
-10. User can click sections for detailed view (instant, no re-extraction)
-11. User can export summary as PDF
+- Clean, intuitive interface with tab-based input selection (Text / File)
+- Drag-and-drop file upload capability
+- Real-time summary display with clickable financial section chips
+- Chat-like history view of all summaries
+- PDF export functionality for generated summaries
+- Mobile-responsive design with Tailwind CSS
+- Built with Vite for fast development and hot module replacement
 
 ---
 
