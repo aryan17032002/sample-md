@@ -9,14 +9,14 @@ AI-powered financial document analysis with intelligent section-based summarizat
 - [Project Overview](#project-overview)
 - [Architecture](#architecture)
 - [Features](#features)
+- [Project Structure](#project-structure)
 - [Get Started](#get-started)
   - [Prerequisites](#prerequisites)
   - [Quick Start](#quick-start)
 - [Usage Guide](#usage-guide)
 - [Environment Variables](#environment-variables)
-- [Documentation](#documentation)
+- [Technology Stack](#technology-stack)
 - [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -121,6 +121,34 @@ graph LR
 - PDF export functionality for generated summaries
 - Mobile-responsive design with Tailwind CSS
 - Built with Vite for fast development and hot module replacement
+
+---
+
+## Project Structure
+
+```
+FinSights/
+├── backend/
+│   ├── api/
+│   │   └── routes.py          # API endpoints
+│   ├── services/
+│   │   ├── llm_service.py     # OpenAI integration
+│   │   └── pdf_service.py     # Document processing
+│   ├── server.py              # FastAPI app
+│   ├── config.py              # Configuration
+│   ├── requirements.txt        # Python dependencies
+│   └── Dockerfile             # Backend container
+├── frontend/
+│   ├── src/
+│   │   ├── pages/             # React pages
+│   │   ├── components/        # React components
+│   │   ├── services/          # API client
+│   │   └── App.jsx            # Main app
+│   ├── package.json           # npm dependencies
+│   └── Dockerfile             # Frontend container
+├── docker-compose.yml         # Service orchestration
+└── README.md                  # This file
+```
 
 ---
 
@@ -395,41 +423,6 @@ LOG_LEVEL=DEBUG
 docker compose restart backend
 docker compose logs -f backend
 ```
-
-
----
-
-
-
-
-
-### Project Structure
-
-```
-FinSights/
-├── backend/
-│   ├── api/
-│   │   └── routes.py          # API endpoints
-│   ├── services/
-│   │   ├── llm_service.py     # OpenAI integration
-│   │   └── pdf_service.py     # Document processing
-│   ├── server.py              # FastAPI app
-│   ├── config.py              # Configuration
-│   ├── requirements.txt        # Python dependencies
-│   └── Dockerfile             # Backend container
-├── frontend/
-│   ├── src/
-│   │   ├── pages/             # React pages
-│   │   ├── components/        # React components
-│   │   ├── services/          # API client
-│   │   └── App.jsx            # Main app
-│   ├── package.json           # npm dependencies
-│   └── Dockerfile             # Frontend container
-├── docker-compose.yml         # Service orchestration
-└── README.md                  # This file
-```
-
----
 
 
 ---
